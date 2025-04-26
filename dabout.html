@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My About Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      font-family: 'Poppins', sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+      background: #1c1c1c;
+      position: relative;
+    }
+
+    header {
+      background: rgba(44, 0, 62, 0.8);
+      padding: 20px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 2;
+    }
+    header nav a {
+      color: #fff;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+    header nav a::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #00eaff;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transition: 0.3s;
+    }
+    header nav a:hover::after {
+      width: 100%;
+    }
+    header nav a:hover {
+      background: rgba(0, 234, 255, 0.2);
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    header nav a.active {
+      color: #00eaff;
+    }
+
+    .about-section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-left {
+      flex: 1 1 40%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .about-left img {
+      width: 300px;
+      border-radius: 50%;
+      border: 5px solid #00eaff;
+      box-shadow: 0 0 30px #00eaff;
+      background: #0f0f0f;
+      padding: 15px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .badge {
+      position: absolute;
+      background: #2c003e;
+      border: 2px solid #00eaff;
+      border-radius: 50%;
+      padding: 15px;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+      color: #00eaff;
+      font-weight: bold;
+      box-shadow: 0 0 20px #00eaff;
+      animation: float 4s ease-in-out infinite;
+    }
+    .badge:nth-child(2) { top: 10%; left: 5%; animation-delay: 0s; }
+    .badge:nth-child(3) { bottom: 15%; left: 0%; animation-delay: 1s; }
+    .badge:nth-child(4) { bottom: 10%; right: 5%; animation-delay: 2s; }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .about-right {
+      flex: 1 1 50%;
+      padding: 20px;
+    }
+    .about-right h5 {
+      letter-spacing: 2px;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+    .about-right h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+    }
+    .about-right h3 {
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: white;
+    }
+    .about-right p {
+      color: #ccc;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    .about-right button {
+      padding: 12px 30px;
+      font-size: 16px;
+      background: #00eaff;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 0 15px #00eaff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .about-right button:hover {
+      background: transparent;
+      color: #00eaff;
+      border: 2px solid #00eaff;
+    }
+
+    /* Particle background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #1c1c1c;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+  <h1 style="color: #00eaff;">John.</h1>
+  <nav>
+    <a href="dhome.html">Home</a>
+    <a href="dabout.html">About</a>
+    <a href="dskills.html">skills</a>
+    <a href="dprojects.html">Projects</a>
+    <a href="dcontact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="about-section">
+  <div class="about-left">
+    <img src="profile.jpg" alt="About Image">
+    <div class="badge">20+<br>Projects</div>
+    <div class="badge">6+<br>months</div>
+    <div class="badge">0<br>Clients</div>
+  </div>
+
+  <div class="about-right">
+    <h5>LET ME INTRODUCE MYSELF</h5>
+    <h1>Usman Ghani</h1>
+    <h3>A story of good</h3>
+    <p>I have successfully completed a professional internship in Machine Learning, Deep Learning and Data Science, complemented by 6 months of intensive industry experience, where I specialized in building predictive models, data-driven solutions, and advanced analytics. I am passionate about leveraging these skills to drive innovation and solve real-world challenges.</p>
+    <div id="extra-content"></div>
+    <button id="readMoreBtn">Read More!</button>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  // Initialize particles.js
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#00eaff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 3 },
+      "line_linked": { "enable": true, "distance": 150, "color": "#00eaff", "opacity": 0.4, "width": 1 },
+      "move": { "enable": true, "speed": 3 }
+    }
+  });
+
+  // Handle Read More button
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  const extraContent = document.getElementById('extra-content');
+  let expanded = false;
+
+  readMoreBtn.addEventListener('click', () => {
+    if (!expanded) {
+      const para = document.createElement('p');
+      para.style.color = 'white';
+      para.style.marginTop = '15px';
+      para.innerText = "I have successfully completed a professi also on Deep Learning. During this time, I specialized in developing and optimizing neural network architectures for real-world problems, exploring fields such as computer vision, natural language processing, and advanced predictive modeling, which strengthened my passion for building intelligent, scalable AI systems.";
+      extraContent.appendChild(para);
+      readMoreBtn.innerText = "Show Less";
+      expanded = true;
+    } else {
+      extraContent.innerHTML = '';
+      readMoreBtn.innerText = "Read More!";
+      expanded = false;
+    }
+  });
+</script>
+
+</body>
+</html>
